@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .item-container {
+        margin: 20px;
+        padding: 20px;
+        display: flex;
+      }
+
+      .item {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin: 20px;
+        padding: 20px;
+      }
+
+      #item1 {
+        background-color: #fbffb9;
+      }
+
+      #item2 {
+        background-color: #ec7357;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.js"
+      integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      /*
+        12.1 fadeIn(), fadeOut()
+    12.2 slideUp(), slideDown(), slideToggle()
+
+        */
+      $(function() {
+        $("#btn1").on("click", function() {
+          $("#item1").fadeOut();
+        });
+
+        $("#btn2").on("click", function() {
+          $("#item1").fadeIn();
+        });
+
+        $("#btn3").on("click", function() {
+          $("#item2").slideUp();
+        });
+
+        $("#btn4").on("click", function() {
+          $("#item2").slideDown();
+        });
+
+        $("#btn5").on("click", function() {
+          $("#item2").slideToggle();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="box1" class="item-container">
+      <div id="item1" class="item"><strong>Box1</strong></div>
+      <div id="item2" class="item"><strong>Box2</strong></div>
+    </div>
+    <div>
+      <button id="btn1">fadeOut</button>
+      <button id="btn2">fadeIn</button>
+      <button id="btn3">slideUp</button>
+      <button id="btn4">slideDown</button>
+      <button id="btn5">slideToggle</button>
+    </div>
+  </body>
+</html>

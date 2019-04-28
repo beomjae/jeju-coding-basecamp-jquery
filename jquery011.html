@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .item-container {
+        margin: 20px;
+        padding: 20px;
+        display: flex;
+      }
+
+      .item {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin: 20px;
+        padding: 20px;
+      }
+
+      #box1 {
+        border: 1px solid red;
+      }
+
+      #box2 {
+        border: 1px solid blue;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.js"
+      integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function() {
+        // item1의 html을 표시
+        console.log($("#item1").html());
+
+        // item1의 text를 표시
+        console.log($("#item1").text());
+
+        // item2의 html을 변경
+        $("#item2").html("<strong>Swift</strong>");
+
+        // item3의 text를 변경
+        $("#item3").text("kotlin");
+
+        // box2에 아이템 1개 추가
+        $("#box2").append("<div class='item'>C#</div>");
+
+        // item4를 box2에 추가
+        $("#item4").appendTo("#box2");
+
+        // item5를 복사후 box2에 추가
+        $("#item5")
+          .clone()
+          .appendTo("#box2");
+
+        // btn1을 클릭하면 text1의 값을 가져다가 result에 출력하기
+        $("#btn1").on("click", function() {
+          var result = $("#text1").val();
+          $("#result").text(result);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="box1" class="item-container">
+      <div id="item1" class="item"><strong>Java</strong></div>
+      <div id="item2" class="item"><strong>Python</strong></div>
+      <div id="item3" class="item"><strong>JavaScript</strong></div>
+      <div id="item4" class="item"><strong>Ruby</strong></div>
+      <div id="item5" class="item"><strong>C++</strong></div>
+    </div>
+    <div id="box2" class="item-container"></div>
+    <div>
+      <div>
+        <input type="text" id="text1" />
+        <button id="btn1">클릭</button>
+      </div>
+      <div>결과값 : <span id="result"></span></div>
+    </div>
+  </body>
+</html>
